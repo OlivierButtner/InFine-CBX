@@ -38,15 +38,9 @@ return [
 
         'mongodb' => [
             'driver' => 'mongodb',
-            'dsn' => env('DB_URI', 'mongodb+srv://admin:admin@infinedatabase.yhij6.mongodb.net/infinedatabase?retryWrites=true&w=majority'),
+
+            'dsn' => env('DB_URI', 'mongodb+srv://admin:admin@infinedatabase.yhij6.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'),
             'database' => 'infinedatabase',
-        ],
-        'sqlite' => [
-            'driver' => 'sqlite',
-            'url' => env('DATABASE_URL'),
-            'database' => env('DB_DATABASE', database_path('database.sqlite')),
-            'prefix' => '',
-            'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
 
         'mysql' => [

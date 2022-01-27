@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
@@ -18,9 +19,6 @@ use App\Http\Controllers\BookingController;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
-});
-
-
 
 
 
@@ -43,3 +41,10 @@ Route::post('/comment', [CommentController::class, 'store']);
 Route::get('/comment/{id}', [CommentController::class, 'show']);
 Route::put('/comment/{id}', [CommentController::class, 'update']);
 Route::delete('/comment/{id}', [CommentController::class, 'destroy']);
+
+Route::get('/users', [UserController::class, 'index']);
+Route::post('/user', [UserController::class, 'store']);
+Route::get('/user/{id}', [UserController::class, 'show']);
+Route::put('/user/{id}', [UserController::class, 'update']);
+Route::delete('/user/{id}', [UserController::class, 'destroy']);
+
