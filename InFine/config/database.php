@@ -37,7 +37,7 @@ return [
 
         'mongodb' => [
             'driver' => 'mongodb',
-            'dsn' => env('DB_URI', 'mongodb+srv://admin:admin@infinedatabase.yhij6.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'),
+            'dsn' => env('DB_URI', `mongodb+srv://admin:admin@infinedatabase.yhij6.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`),
             'database' => 'infinedatabase',
         ],
     ],

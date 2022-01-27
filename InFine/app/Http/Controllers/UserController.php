@@ -12,11 +12,12 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Collection|User[]
+     * @return Response
      */
-    public function index(): Collection|array
+    public function index(): Response
     {
-        return User::all();
+        $all = User::all();
+        return response($all, 200);
     }
 
 
@@ -73,6 +74,7 @@ class UserController extends Controller
     public function show($user): Response
     {
         return User::find($user);
+
     }
 
     /**
