@@ -2,25 +2,32 @@
 
 namespace App\Models;
 
+use Jenssegers\Mongodb\Eloquent\Model;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class User extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $collection = 'InFine_users';
+    protected $connection = 'mongodb';
     /**
      * The attributes that are mass assignable.
      *
-     * @var array<int, string>
+     * @var object
      */
     protected $fillable = [
-        'name',
+        'username',
         'email',
         'password',
+        'address',
+        'imageAvatar',
+        'myEvents',
+        'myComments',
     ];
 
     /**
@@ -29,8 +36,9 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'password',
+        'passwordConfirmation',
         'remember_token',
+        'role',
     ];
 
     /**
