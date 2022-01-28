@@ -53,10 +53,11 @@ class UserController extends Controller
         $userCreated->username = $request->username;
         $userCreated->email = $request->email;
         $userCreated->password = $request->password;
-        $userCreated->imageAvatar = $request->imageAvatar;
-        $userCreated->address = $request->address;
-        $userCreated->myEvents = $request->myEvents;
-        $userCreated->myComments = $request->myComments;
+ //       $userCreated->imageAvatar = $request->imageAvatar;
+ //       $userCreated->address = $request->address;
+ //       $userCreated->myEvents = $request->myEvents;
+  //      $userCreated->myComments = $request->myComments;
+        $userCreated->remember_token = $request->remember_token;
 
         $userCreated->save();
 
